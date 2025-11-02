@@ -8,4 +8,4 @@
 
 ### 🌐 Live URL:
 
-[👉 Live Link - Assignment_02 HTML + CSS ](https://your-live-link-here.com)
+[👉 Live Link - Assignment_02 HTML + CSS ](https://assignment-02-html-css.netlify.app/)

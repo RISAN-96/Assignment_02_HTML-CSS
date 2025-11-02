@@ -1,0 +1,903 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* variables */
+:root {
+  --green: #06c167;
+  --hero-bg: #f3fcf7;
+  --black: #1d1d1f;
+  --padding: 0px 5vw;
+  --margin: 60px 0px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* body */
+body {
+  font-family: "Inter", sans-serif !important;
+  background-color: #fff;
+}
+.wrapper {
+  padding: var(--padding);
+}
+
+/* header & nav */
+header {
+  padding-top: 39px;
+  background-color: var(--hero-bg);
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 90vw;
+    z-index: 1000;
+    img {
+      object-fit: contain;
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 44px;
+      li {
+        list-style: none;
+        a {
+          display: inline-block;
+          text-decoration: none;
+          font-family: "Inter";
+          font-weight: 400;
+          font-size: 16px;
+          color: var(--black);
+        }
+        a:hover {
+          color: var(--green);
+          transition: all 0.3s ease;
+        }
+      }
+    }
+    .hamburger {
+      display: none;
+      border: 2px solid var(--green);
+      padding: 2px 7px;
+      cursor: pointer;
+      .bar {
+        display: block;
+        height: 3px;
+        width: 25px;
+        margin: 5px auto;
+        background-color: var(--green);
+        transition: all 0.3s ease;
+      }
+    }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+      ul {
+        position: fixed;
+        right: -100%;
+        top: 80px;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--green);
+        width: 100%;
+        height: auto;
+        text-align: center;
+        transition: all 0.3s ease;
+        li {
+          margin: 10px;
+        }
+      }
+      ul.active {
+        right: 0;
+      }
+    }
+  }
+}
+
+/* hero section */
+.hero {
+  /* background-image: url(/asset/image/Background.svg); */
+  /* background-size: contain; */
+  background-color: var(--hero-bg);
+  background-size: 100% 50%;
+  width: 100%;
+  .cover {
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .box {
+      width: 45vw;
+    }
+    .left {
+      h1 {
+        /* We're Serious For Food. */
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 75px;
+        line-height: 91px;
+        color: var(--black);
+        margin-bottom: 11px;
+      }
+      p {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 142.4%;
+        color: rgba(29, 29, 31, 0.75);
+        margin-bottom: 30px;
+      }
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        background-color: var(--green);
+        color: var(--hero-bg);
+        padding: 15px;
+        font-size: 16px;
+        margin-bottom: 70px;
+      }
+      .logo {
+        bottom: -50px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+      }
+    }
+    .right {
+      display: flex;
+      justify-content: flex-end;
+      .hero-img {
+        width: 80%;
+        height: auto;
+        max-width: 40vw;
+        position: relative;
+        right: 50px;
+      }
+      .cards {
+        /* achievement cards */
+        position: absolute;
+        .card {
+          background-color: #fff;
+          color: var(--black);
+          height: 53px;
+          min-width: 230px;
+          border-radius: 50px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-family: "Inter" sans-serif;
+          font-weight: 500;
+          font-size: 15px;
+        }
+        .rating {
+          position: relative;
+          top: 300px;
+          right: 401px;
+          padding: 17px 15px 18px 19px;
+        }
+        .quality {
+          position: relative;
+          top: 145px;
+          right: 0px;
+          padding: 6px 16px 7px 7px;
+        }
+        .dot {
+          position: relative;
+          top: 440px;
+          left: 30px;
+        }
+      }
+    }
+  }
+  /* responsive -- hero */
+  @media (max-width: 768px) {
+    .cover {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .box {
+        width: 90vw;
+      }
+      .left {
+        position: relative;
+        text-align: center;
+        h1 {
+          font-size: 51px;
+        }
+        p {
+          font-size: 14px;
+        }
+        .btn {
+          padding: 20px 90px;
+        }
+        .logo {
+          position: absolute;
+          top: 990px;
+          right: 0px;
+          justify-content: center;
+          img {
+            width: 120px;
+          }
+        }
+      }
+      .right {
+        margin-top: 5px;
+        margin-bottom: 150px;
+
+        justify-content: center;
+        .hero-img {
+          max-width: 100vw;
+          right: 0px;
+        }
+        .cards {
+          .rating {
+            position: relative;
+            top: 330px;
+            right: 0px;
+            z-index: 100;
+          }
+          .quality {
+            position: relative;
+            top: 340px;
+            right: 0px;
+            z-index: 100;
+          }
+          .dot {
+            position: relative;
+            top: 150px;
+            left: 150px;
+            width: 10px;
+            padding: 0;
+            margin: 0;
+            img {
+              width: 120px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* service section */
+.service {
+  margin-top: 160px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 57.5px 0px;
+    .box {
+      /* margin-top: 20px; */
+      width: 250px;
+      /* height: 70px; */
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      /* justify-content: space-evenly; */
+      .text {
+        .ttext {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          color: #1d1d1f;
+          opacity: 75%;
+        }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .container {
+      justify-content: center;
+      /* align-items: center; */
+      .box {
+        margin: 50px 10px;
+        width: 150px;
+        /* border: 2px solid; */
+        flex-wrap: wrap;
+        justify-content: center;
+        .text {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+/* benefit section */
+.benefits {
+  .benefit {
+    margin-top: 132px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    .left {
+      background-image: url(/asset/image/Rectangle\ 5.svg);
+      height: auto;
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      /* justify-content: center; */
+      align-items: center;
+      img {
+        width: 100%;
+        height: auto;
+        max-width: 90vw;
+        /* object-fit: contain; */
+      }
+    }
+    .right {
+      margin-top: 57px;
+      width: 45%;
+      p {
+        /* Our Benefit */
+        font-family: "Inter";
+        font-weight: 500;
+        font-size: 15px;
+        color: #1d1d1f;
+        margin-bottom: 20px;
+      }
+      .title {
+        /* The More Healthy Food The Better */
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 60px;
+        line-height: 73px;
+        color: #1d1d1f;
+        margin-bottom: 67px;
+      }
+      ul {
+        li {
+          list-style: none;
+          display: flex;
+          gap: 22px;
+          align-items: center;
+          font-family: "Inter";
+          font-weight: 400;
+          font-size: 16px;
+          color: var(--black);
+          margin-bottom: 21px;
+        }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .benefit {
+      flex-direction: column;
+      margin-top: 60px;
+      text-align: center;
+      .left {
+        justify-content: center;
+        img {
+          height: 417px;
+          width: 300px;
+          position: relative;
+          top: -25px;
+        }
+      }
+      .right {
+        width: 100%;
+        text-align: center;
+        padding: 0 20px;
+        .title {
+          font-size: 35px;
+          ul {
+            li {
+              margin-bottom: 70px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* our stars */
+.stars {
+  .our_stars {
+    margin-top: 183px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    .left {
+      width: 45vw;
+      p {
+        /* Our Benefit */
+        font-family: "Inter";
+        font-weight: 500;
+        font-size: 15px;
+        color: #1d1d1f;
+        margin-bottom: 20px;
+      }
+      .title {
+        /* The More Healthy Food The Better */
+        font-family: "Inter";
+        font-weight: 500;
+        font-size: 60px;
+        color: #1d1d1f;
+        margin-bottom: 67px;
+      }
+      .container {
+        display: flex;
+        gap: 84px;
+        /* justify-content: space-between; */
+        .num {
+          font-family: "Inter";
+          font-weight: 600;
+          font-size: 40px;
+          color: #06c167;
+          margin-bottom: 16px;
+        }
+        .text {
+          /* Sold Product */
+          font-family: "Inter";
+          font-weight: 400;
+          font-size: 15px;
+          color: #1d1d1f;
+          opacity: 0.65;
+          margin-bottom: 51px;
+        }
+      }
+      .btn {
+        text-decoration: none;
+        background-color: var(--green);
+        color: var(--hero-bg);
+        padding: 15px;
+        font-size: 16px;
+        margin-bottom: 51px;
+      }
+    }
+    .right {
+      background-image: url(/asset/image/Our_star_bg.svg);
+      height: auto;
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      justify-content: end;
+      img {
+        width: 100%;
+        height: auto;
+        max-width: 90vw;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .our_stars {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: 60px;
+      text-align: center;
+      .right {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        img {
+          /* height: 489px; */
+          width: 90%;
+          position: relative;
+          top: -25px;
+        }
+      }
+      .left {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        .title {
+          font-size: 35px;
+          margin-bottom: 53px;
+        }
+        .container {
+          display: flex;
+          gap: 40px;
+          flex-direction: column;
+          justify-content: space-evenly;
+          .number {
+            margin-bottom: 0;
+            .text {
+              margin-bottom: 0;
+            }
+          }
+        }
+        .btn {
+          margin-top: 60px;
+        }
+      }
+    }
+  }
+}
+
+/* our features */
+.feature {
+  margin-top: 100px;
+  .top {
+    text-align: center;
+    .head {
+      /* Our Features */
+      font-family: "Inter";
+      font-weight: 500;
+      font-size: 15px;
+      color: #1d1d1f;
+      margin-bottom: 20px;
+    }
+    .title {
+      /* Variety Of Foods */
+      font-family: "Inter";
+      font-weight: 500;
+      font-size: 60px;
+      color: #1d1d1f;
+      margin-bottom: 70px;
+    }
+  }
+  .bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .box {
+      width: 292.5px;
+      height: 292.5px;
+      border: 2px solid var(--green);
+    }
+    .image {
+      img {
+        width: 290px;
+        height: 290px;
+        object-fit: contain;
+        /* display: none; */
+        /* box-sizing: content-box; */
+      }
+    }
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* align-items: center; */
+      background-color: var(--hero-bg);
+      .tt {
+        margin: 35px;
+        .title {
+          width: 227px;
+          /* Veggies Are Forever */
+          font-family: "Inter";
+          font-weight: 500;
+          font-size: 32px;
+          color: #1d1d1f;
+          margin-bottom: 25px;
+        }
+        .desc {
+          /* We offer the following services */
+          font-family: "Inter";
+          font-weight: 400;
+          font-size: 16px;
+          color: #1d1d1f;
+          margin-bottom: 38px;
+        }
+        a {
+          text-decoration: none;
+          background-color: #e6f9f0;
+          color: var(--green);
+          padding: 15px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .top {
+      .title {
+        font-size: 35px;
+      }
+    }
+    .bottom {
+      .box5 {
+        order: 6;
+      }
+      .box6 {
+        order: 5;
+      }
+      .box7 {
+        order: 8;
+      }
+      .box8 {
+        order: 7;
+      }
+    }
+  }
+}
+/* popular product section */
+.product {
+  .popular {
+    margin-top: 192px;
+    .top {
+      p {
+        /* Our Product */
+        font-family: "Inter";
+        font-weight: 500;
+        font-size: 15px;
+        color: #1d1d1f;
+        margin-bottom: 20px;
+      }
+      .title {
+        /* Most Popular Product */
+        font-family: "Inter";
+        font-weight: 500;
+        font-size: 60px;
+        color: #1d1d1f;
+        margin-bottom: 63px;
+      }
+    }
+    .bottomm {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      .box {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-around; */
+        justify-content: space-evenly;
+        align-items: center;
+        width: 270px;
+        height: 445px;
+        border: 2px solid #767675;
+        .fruits {
+          height: 190px;
+        }
+        .rating {
+          height: 14px;
+          margin-bottom: 21px;
+        }
+        p {
+          /* Summer Veganie */
+          font-family: "Inter";
+          font-weight: 400;
+          font-size: 20px;
+          color: #1d1d1f;
+          margin-bottom: 25px;
+        }
+        .old_price {
+          text-decoration: line-through;
+          color: gray;
+          font-family: "Inter";
+          font-weight: 600;
+          font-size: 20px;
+          color: #767675;
+          opacity: 0.35;
+          margin-bottom: 29px;
+        }
+        .new_price {
+          /* $29 */
+          font-family: "Inter";
+          font-weight: 400;
+          font-size: 20px;
+          color: var(--green);
+        }
+        a {
+          text-decoration: none;
+          border: 2px solid var(--green);
+          color: var(--green);
+          padding: 13px 40px;
+          font-size: 16px;
+          img {
+            width: 15px;
+            padding: 1px;
+          }
+        }
+      }
+      .box:hover {
+        border: 2px solid var(--green);
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .popular {
+      margin-top: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .top {
+        /* flex-direction: column; */
+        /* flex-wrap: wrap; */
+        align-items: center;
+        /* border: 2px solid; */
+        width: 250px;
+        text-align: center;
+        .title {
+          font-size: 35px;
+        }
+      }
+    }
+    .bottomm {
+      /* width: 100%; */
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      .box {
+        margin-bottom: 37px;
+      }
+    }
+  }
+}
+/*  veggie section */
+.veg {
+  .veggie {
+    margin-top: 193px;
+    background-image: url("/asset/image/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 459px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .title {
+      text-align: center;
+      font-size: 60px;
+      color: #fff;
+    }
+    button {
+      margin: 10px 0px;
+      border: none;
+      a {
+        text-decoration: none;
+        background-color: #06c167;
+        border: none;
+        padding: 15px 40px;
+        color: #fff;
+        img {
+          width: 15px;
+          padding: 1px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .veggie {
+      margin-top: 68px;
+      .title {
+        font-size: 35px;
+      }
+      button {
+        margin-top: 52px;
+        a {
+          padding: 25px 80px;
+        }
+      }
+    }
+  }
+}
+/* footer */
+.foot {
+  footer {
+    margin-top: 64px;
+    .top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .links {
+        /* width: 280px;
+        height: 208px; */
+        img {
+          align-self: flex-start;
+          margin-bottom: 41px;
+        }
+        p {
+          font-family: "Inter";
+          font-weight: 400;
+          font-size: 16px;
+          color: #1d1d1f;
+          margin-bottom: 51px;
+        }
+        .social {
+          display: flex;
+          gap: 25px;
+          /* justify-content: space-between; */
+          a {
+            text-decoration: none;
+            color: black;
+          }
+        }
+      }
+      .about {
+        .about_us {
+          h3 {
+            font-family: "Inter";
+            font-weight: 500;
+            font-size: 24px;
+            color: #1d1d1f;
+            margin-bottom: 41px;
+          }
+          ul {
+            li {
+              list-style: none;
+              padding: 5px 0px;
+              a {
+                text-decoration: none;
+                color: #1d1d1f;
+              }
+              a:hover {
+                color: #06c167;
+              }
+            }
+          }
+        }
+      }
+      .sub {
+        width: 350px;
+        h3 {
+          font-family: "Inter";
+          font-weight: 500;
+          font-size: 24px;
+          color: #1d1d1f;
+          margin-bottom: 41px;
+        }
+        ul {
+          li {
+            list-style: none;
+            margin-bottom: 37px;
+          }
+        }
+        .input {
+          padding-bottom: 25px;
+          .email {
+            background-color: #f1f2ed;
+            padding: 14px;
+            border: none;
+          }
+          a {
+            text-decoration: none;
+            background-color: #06c167;
+            border: none;
+            padding: 12px;
+            color: #fff;
+          }
+        }
+      }
+      margin-bottom: 90px;
+    }
+    .copyright {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    footer {
+      .top {
+        flex-direction: column;
+        text-align: center;
+        .links {
+          img {
+            align-self: center;
+          }
+          .social {
+            justify-content: center;
+          }
+        }
+        .about {
+          margin-top: 50px;
+        }
+        .sub {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+}
